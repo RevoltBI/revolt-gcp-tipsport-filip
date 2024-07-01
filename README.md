@@ -42,3 +42,10 @@ gcloud beta run jobs create my-python-job --image gcr.io/YOUR_PROJECT_ID/my-pyth
 9.
 **Spuštění cloud run jobu**
 gcloud beta run jobs execute my-python-job --region YOUR_REGION
+
+
+
+docker run -it keboola-cli
+
+**bash:**
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-file.json"
