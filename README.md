@@ -49,3 +49,4 @@ docker run -it keboola-cli
 
 **bash:**
 export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-file.json"
+export GOOGLE_APPLICATION_CREDENTIALS="sandbox-filip-bar-c5657a3d0e99.json"
