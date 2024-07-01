@@ -1,5 +1,7 @@
-import googlemaps as gmaps
+import googlemaps
 import pandas as pd
+
+gmaps = googlemaps.Client(key="AIzaSyBYMrpKohBts6PuK71Ktb26AvPDXXkXGao")
 
 place_name = 'Tipsport praha smichov'
 
