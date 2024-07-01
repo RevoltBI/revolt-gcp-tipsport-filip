@@ -1,0 +1,14 @@
+gcloud
+jupyterlab
+numpy
+pandas
+matplotlib
+scikit-learn
+seaborn
+requests
+beautifulsoup4
+flask
+sqlalchemy
+pytest
+ipython
+notebook
