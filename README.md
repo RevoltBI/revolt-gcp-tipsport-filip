@@ -50,3 +50,29 @@ docker run -it keboola-cli
 **bash:**
 export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-file.json"
 export GOOGLE_APPLICATION_CREDENTIALS="sandbox-filip-bar-c5657a3d0e99.json"
+
+
+
+Přehození z osobního na Revoltí git repo: 
+git remote -v
+
+git config user.name
+git config user.email
+
+git remote remove origin 
+git remote add origin git@github.com:RevoltBI/revolt-gcp-tipsport-filip.git
+git branch -M main
+git push -u origin main
+
+
+**PowerShell Administrator:**
+ssh-keygen -t ed25519 -C "your_email@example.com"
+chatGPT:  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+cat  C:\Users\barrf/.ssh/id_ed25519.pub
+
+
+
+
+
+
+git clone git@github.com:RevoltBI/gforce-docs.git
