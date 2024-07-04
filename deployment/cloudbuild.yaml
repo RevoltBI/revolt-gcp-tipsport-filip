@@ -1,8 +1,7 @@
 steps:
   - id: 'Build Docker Image'
     name: 'gcr.io/sandbox-filip-bar/get-reviews'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/sandbox-filip-bar/my-repo/revolt-gcp-tipsport-filip:$COMMIT_SHA', '.']
-    dir: '.'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/gcr.io/sandbox-filip-bar/get-reviews', '.']
 
 
 images:
