@@ -1,29 +1,26 @@
 steps:
   - id: 'Build Docker Image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/sandbox-filip-bar/revolt-gcp-tipsport-filip
-:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/sandbox-filip-bar/get-reviews:$COMMIT_SHA', '.']
 
   - id: 'Push Docker Image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/sandbox-filip-bar/revolt-gcp-tipsport-filip
-:$COMMIT_SHA']
+    args: ['push', 'gcr.io/sandbox-filip-bar/get-reviews:$COMMIT_SHA']
 
   - id: 'Deploy to Cloud Run'
     name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args: [
-      'run', 'deploy', 'revolt-gcp-tipsport-filip
+      'run', 'deploy', 'get-reviews
 ',
-      '--image', 'gcr.io/sandbox-filip-bar/revolt-gcp-tipsport-filip
-:$COMMIT_SHA',
+      '--image', 'gcr.io/sandbox-filip-bar/get-reviews:$COMMIT_SHA',
       '--region', 'europe-west1',
       '--platform', 'managed',
       '--allow-unauthenticated'
     ]
 
 images:
-  - 'gcr.io/sandbox-filip-bar/revolt-gcp-tipsport-filip
+  - 'gcr.io/sandbox-filip-bar/get-reviews
 :$COMMIT_SHA'
 
 options:
