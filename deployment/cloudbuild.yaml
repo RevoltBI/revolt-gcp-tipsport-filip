@@ -1,22 +1,22 @@
 steps:
   - id: 'Build Docker Image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/my-repo/gforce-docs:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/sandbox-filip-bar/my-repo/revolt-gcp-tipsport-filip:$COMMIT_SHA', '.']
     dir: '.'
 
   - id: 'Push Docker Image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/my-repo/gforce-docs:$COMMIT_SHA']
+    args: ['push', 'europe-west1-docker.pkg.dev/sandbox-filip-bar/my-repo/revolt-gcp-tipsport-filip:$COMMIT_SHA']
 
   - id: 'Deploy to Cloud Run'
     name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args: [
-      'run', 'deploy', 'gforce-docs',
-      '--image', 'europe-west1-docker.pkg.dev/$PROJECT_ID/my-repo/gforce-docs:$COMMIT_SHA',
+      'run', 'deploy', 'revolt-gcp-tipsport-filip',
+      '--image', 'europe-west1-docker.pkg.dev/sandbox-filip-bar/my-repo/revolt-gcp-tipsport-filip:$COMMIT_SHA',
       '--region', 'europe-west1',
       '--platform', 'managed'
     ]
 
 images:
-  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/my-repo/gforce-docs:$COMMIT_SHA'
+  - 'europe-west1-docker.pkg.dev/sandbox-filip-bar/my-repo/revolt-gcp-tipsport-filip:$COMMIT_SHA'

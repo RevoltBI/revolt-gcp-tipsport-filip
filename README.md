@@ -39,9 +39,12 @@ gcloud services enable run.googleapis.com
 **vytvoření clous run job s imagem**
 gcloud beta run jobs create my-python-job --image gcr.io/YOUR_PROJECT_ID/my-python-app --region YOUR_REGION
 (gcloud beta run jobs create gcp-first-app --image gcr.io/sandbox-filip-bar/gcp-first-app --region europe-west1)
+(gcloud beta run jobs create get-reviews --image gcr.io/sandbox-filip-bar/get-reviews --region europe-west1)
 9.
 **Spuštění cloud run jobu**
 gcloud beta run jobs execute my-python-job --region YOUR_REGION
+
+(gcloud beta run jobs execute get-reviews2 --region europe-west1)
 
 
 
