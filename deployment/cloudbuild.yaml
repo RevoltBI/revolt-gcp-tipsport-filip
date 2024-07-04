@@ -22,6 +22,6 @@ images:
   - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
 
 options:
-  logging: CLOUD_LOGGING_ONLY  # Nebo NONE, pokud nechcete ukládat žádné logy
+  logsBucket: gs://log-get-reviews-bucket  # Zde nahraďte názvem vašeho bucketu
 substitutions:
   _REGION: 'europe-west1'
