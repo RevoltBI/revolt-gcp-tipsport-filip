@@ -26,7 +26,5 @@ images:
   - 'gcr.io/sandbox-filip-bar/revolt-gcp-tipsport-filip
 :$COMMIT_SHA'
 
-options:
-  service_account: "get-reviews-admin@sandbox-filip-bar.iam.gserviceaccount.com"
 substitutions:
   _REGION: 'europe-west1'
