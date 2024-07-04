@@ -21,5 +21,7 @@ steps:
 images:
   - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
 
+options:
+  logging: CLOUD_LOGGING_ONLY  # Nebo NONE, pokud nechcete ukládat žádné logy
 substitutions:
   _REGION: 'europe-west1'
