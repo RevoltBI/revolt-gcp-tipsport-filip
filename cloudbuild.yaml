@@ -1,7 +1,13 @@
 steps:
   - id: 'Build Docker Image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/sandbox-filip-bar/revolt-gcp-tipsport-filip:$COMMIT_SHA', '.']
+    args: [
+      'build',
+      '-t', 'gcr.io/sandbox-filip-bar/revolt-gcp-tipsport-filip:$COMMIT_SHA',
+      '--build-arg', 'SERVICE_ACCOUNT_KEY=$(SERVICE_ACCOUNT_KEY)',
+      '.'
+    ]
+    secretEnv: ['SERVICE_ACCOUNT_KEY']
 
   - id: 'Push Docker Image'
     name: 'gcr.io/cloud-builders/docker'
@@ -24,5 +30,7 @@ images:
 options:
   logging: CLOUD_LOGGING_ONLY
 
-substitutions:
-  _REGION: 'europe-west1'
+availableSecrets:
+  secretManager:
+    - versionName: projects/1014220376825/secrets/GET_REVIEWS_SECERET/versions/1
+      env: 'SERVICE_ACCOUNT_KEY'

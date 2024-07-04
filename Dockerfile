@@ -13,10 +13,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Zkopírujte soubor aplikace do pracovního adresáře
 COPY app.py .
 
-# Define environment variable
-ENV GOOGLE_APPLICATION_CREDENTIALS="sandbox-filip-bar-c5657a3d0e99.json"
+# Definujte proměnnou prostředí pro Google Application Credentials
+ENV GOOGLE_APPLICATION_CREDENTIALS="/app/service-account-key.json"
 
-COPY sandbox-filip-bar-c5657a3d0e99.json /app/sandbox-filip-bar-c5657a3d0e99.json
+# Uložení klíče do souboru z proměnné prostředí při buildu Docker image
+ARG SERVICE_ACCOUNT_KEY
+RUN echo "$SERVICE_ACCOUNT_KEY" > /app/service-account-key.json
 
 # Definujte příkaz, který se spustí při startu kontejneru
 CMD ["python", "app.py"]
