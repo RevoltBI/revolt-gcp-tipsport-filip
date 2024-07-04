@@ -11,8 +11,7 @@ steps:
     name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args: [
-      'run', 'deploy', 'get-reviews
-',
+      'run', 'deploy', 'get-reviews',
       '--image', 'gcr.io/sandbox-filip-bar/get-reviews:$COMMIT_SHA',
       '--region', 'europe-west1',
       '--platform', 'managed',
@@ -20,8 +19,7 @@ steps:
     ]
 
 images:
-  - 'gcr.io/sandbox-filip-bar/get-reviews
-:$COMMIT_SHA'
+  - 'gcr.io/sandbox-filip-bar/get-reviews:$COMMIT_SHA'
 
 options:
   logging: CLOUD_LOGGING_ONLY
