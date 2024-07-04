@@ -27,7 +27,6 @@ images:
 :$COMMIT_SHA'
 
 options:
-  logsBucket: gs://log-get-reviews-bucket  # Zde nahraďte názvem vašeho bucketu
   service_account: "get-reviews-admin@sandbox-filip-bar.iam.gserviceaccount.com"
 substitutions:
   _REGION: 'europe-west1'
