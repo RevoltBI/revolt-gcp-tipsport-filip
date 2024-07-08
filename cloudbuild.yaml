@@ -32,5 +32,5 @@ options:
 
 availableSecrets:
   secretManager:
-    - versionName: projects/sandbox-filip-bar/secrets/service-account-key/versions/latest
+    - versionName: projects/sandbox-filip-bar/secrets/GET_REVIEWS_SECRET/versions/latest
       env: 'SERVICE_ACCOUNT_KEY'
