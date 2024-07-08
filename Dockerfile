@@ -20,5 +20,11 @@ ENV GOOGLE_APPLICATION_CREDENTIALS="/app/service-account-key.json"
 ARG SERVICE_ACCOUNT_KEY
 RUN echo "$SERVICE_ACCOUNT_KEY" > /app/service-account-key.json
 
+# Nastavení proměnné prostředí pro port
+ENV PORT 8080
+
+# Expose port 8080
+EXPOSE 8080
+
 # Definujte příkaz, který se spustí při startu kontejneru
 CMD ["python", "app.py"]
