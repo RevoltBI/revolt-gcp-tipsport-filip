@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
-def app():
+def main():
 
     gmaps = googlemaps.Client(key="AIzaSyBYMrpKohBts6PuK71Ktb26AvPDXXkXGao")
 
